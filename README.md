@@ -1,7 +1,7 @@
 # Producer-Consumer-Buffer
  Buffer pool with 6 buffers containing 2 producers and 3 consumers
 
-
+<br />
 
 ### **About**
 
@@ -15,7 +15,6 @@ The producer-consumer based buffer mode involves two processes, the producer pro
 4. If the buffer is full, wait for the consumer to take the data before adding it; 
 5. If the buffer is empty, wait for the producer to add data before reading.
 
-<pre> lalala </pre>
 <br />
 
 ### **Problem**
@@ -26,7 +25,7 @@ The buffer is suitable for multi-processor environment. The module adopts multi-
 
 A deadlock occurs if the consumer successfully acquires the semaphore while the buffer is empty. If there is no consistency or synchronization between the producer and the consumer such that both access the critical section at the same time, a deadlock can occur and both the consumer and the producer will enter a wait state, resulting in a deadlock.
 
-
+<br />
 
 ### **Solution**
 
@@ -34,19 +33,19 @@ The Java programming language uses the keyword synchronized as the prefix of the
 
 The method wait keeps the thread waiting until the method notify notifies it to end the waiting, so the experiment uses the synchronized modified producer class Producer and consumer class Consumer to lock the producer and consumer. When a thread enters the synchronized method of an object, other threads cannot enter the method, but if wait() method is called in the synchronized method, other threads can enter the method.
 
-
+<br />
 
 ### **Output Result**
 
 ![image-20221018105827852](README/image-20221018105827852.png)
 
-
+<br />
 
 ### **Algorithm Flowchart**
 
 ![image-20221018110033960](README/image-20221018110033960.png)
 
-
+<br />
 
 ### **Analysis**
 

@@ -3,7 +3,7 @@
 
 <br />
 
-### **About**
+## **About**
 
 The producer-consumer based buffer mode involves two processes, the producer process and the consumer process that share a fixed-size buffer. The role of the producer is to put one set of data into the buffer at a time, and the role of the consumer is to read one set of data from the buffer at a time. One of the goals of the buffer is to ensure that producers do not add data to a full buffer, and consumers do not read data from an empty buffer. 
 
@@ -17,7 +17,7 @@ The producer-consumer based buffer mode involves two processes, the producer pro
 
 <br />
 
-### **Problem**
+## **Problem**
 
 In computer science, the producer and consumer problem is a classic example of a multi-process synchronization problem. Synchronization is an important and familiar problem in software design and development, many applications use synchronization as their method and solution. 
 
@@ -27,7 +27,7 @@ A deadlock occurs if the consumer successfully acquires the semaphore while the 
 
 <br />
 
-### **Solution**
+## **Solution**
 
 The Java programming language uses the keyword synchronized as the prefix of the method to achieve synchronization, allowing only one thread to enter the synchronization code at the same time, avoiding the abuse of key resources. Java can also control the communication between threads through methods such as wait(), notify() or notifyAll(). 
 
@@ -35,18 +35,18 @@ The method wait keeps the thread waiting until the method notify notifies it to 
 
 <br />
 
-### **Output Result**
+## **Output Result**
 
 ![image-20221018105827852](README/image-20221018105827852.png)
 
 <br />
 
-### **Algorithm Flowchart**
+## **Algorithm Flowchart**
 
 ![image-20221018110033960](README/image-20221018110033960.png)
 
 <br />
 
-### **Analysis**
+## **Analysis**
 
 This experiment uses multiple buffers between producers and consumers as critical sections. Producers can keep putting products into the buffer until the buffer is full, and consumers can keep getting products from the buffer until the buffer is empty. Unlike single buffer, this approach requires more communication between producer and consumer. The producer's solution to a full buffer is to go to sleep, and the next time the consumer removes data from the buffer, the producer will wake up and start adding data to the buffer again. Similarly, if the consumer judges that the buffer is empty, it will enter the sleep state, and the next time the producer adds data to the buffer, it will wake up the consumer in the sleep state.

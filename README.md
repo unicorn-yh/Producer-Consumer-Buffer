@@ -15,6 +15,7 @@ The producer-consumer based buffer mode involves two processes, the producer pro
 4. If the buffer is full, wait for the consumer to take the data before adding it; 
 5. If the buffer is empty, wait for the producer to add data before reading.
 
+<pre> lalala </pre>
 
 
 ### **Problem**
